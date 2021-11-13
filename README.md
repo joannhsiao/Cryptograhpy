@@ -26,7 +26,7 @@ ciphertext:  OIWWVAZCSH
 ```
 
 ## Playfair Cipher
-<p>`hw03-encrypyt.py` for encrypt; on the other hand, `hw03-decrypyt.py` for decrypt</p>
+`hw03-encrypyt.py` for encrypt; on the other hand, `hw03-decrypyt.py` for decrypt.
 usage: 
 `python3 Playfair-encrypyt.py key`
 `python3 Playfair-decrypyt.py key`
