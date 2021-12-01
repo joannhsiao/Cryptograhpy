@@ -81,3 +81,52 @@ AA,NDYEDY,,,HOAAAKTCWP,E,TAPEESO,LPR
 $ echo AA,NDYEDY,,,HOAAAKTCWP,E,TAPEESO,LPR | python3 Rail_Fence-decrypt.py 7
 AN,APPLE,A,DAY,KEEPS,THE,DOCTOR,AWAY
 ```
+
+## Merkle-Hellman Knapsack Cryptosystem
+1. Generate key
+```
+[K]ey generation / [E]ncryption / [D]ecryption? k
+Select the block size.
+n? 8
+Input a list of n superincreasing integers, separated by commas or spaces.
+If you simply press , we shall randomly generate one for you.
+W? 27 32 61 121 243 486 971 1943
+Please input an integer larger than 3884
+q? 3890
+Please input an integer which is relatively prime with q.
+r? 400
+Please input an integer which is relatively prime with q.
+r? 2001
+=========================
+Announce your public key:
+n = 8
+B = [3457, 1792, 1471, 941, 3883, 3876, 1861, 1833]
+q = 3890
+=========================
+```
+2. Encryption
+```
+[G]enerate key | [E]ncryption | [D]ecryption? E
+n? 8
+Input a list of n integers, separated by commas or spaces.
+B? 295, 592, 301, 14, 28, 353, 120, 236
+q? 881
+Plaintext - Encrypt me!!!
+Ciphertext: [1181, 1394, 1249, 1027, 1171, 907, 1260, 301, 1510, 1482, 537, 537, 537]
+```
+3. Decryption
+```
+[G]enerate key | [E]ncryption | [D]ecryption? D
+Select the block size.
+n? 8
+Input a list of n superincreasing integers, separated by commas or spaces.
+If you simply press , we shall randomly generate one for you.
+W? 2 7 11 21 42 89 180 354
+Please input an integer larger than 706
+q? 881
+Please input an integer which is relatively prime with q.
+r? 588
+Input ciphertext (separated by spaces) - 1181, 1394, 1249, 1027, 1171, 907, 1260, 301, 1510, 1482, 537, 537, 537
+Plaintext: 69 110 99 114 121 112 116 32 109 101 33 33 33
+Encrypt me!!!
+```
