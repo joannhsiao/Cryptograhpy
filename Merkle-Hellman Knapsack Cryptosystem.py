@@ -46,12 +46,19 @@ def encryption(n):
     b = input("B? ").replace(",", "")
     B = list(map(int, b.split(" ")))
     plaintext = input("Plaintext - ")
-    ciphertext = []
+    cipher = []
     for i in range(len(plaintext)):
         Ascii = str(bin(ord(plaintext[i])))[2:].zfill(n)
+        for j in range(len(Ascii)):
+            cipher.append(Ascii[j])
+    if len(cipher) % n != 0:
+        for i in range(n-int(len(cipher)%n)):
+            cipher.append('0')
+    ciphertext = []
+    for i in range(0, len(cipher), n):
         num = 0
-        for j in range (n):
-            num += int(Ascii[j]) * B[j]
+        for j in range(n):
+            num += int(cipher[i+j]) * B[j]
         ciphertext.append(num)
     print("Ciphertext: ", ciphertext)
 
