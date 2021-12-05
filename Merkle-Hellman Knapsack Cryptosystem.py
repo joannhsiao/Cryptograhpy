@@ -3,17 +3,13 @@ import math
 import sys
 import random
 
-option = input("[K]ey generation| [E]ncryption | [D]ecryption?")
-print("Select the block size.")
-n = int(input("n?"))
+random.seed(0)
 
 def random_num(n):
     cnt = 1
     a = [0] * n
-    while cnt < n:
-        num = random.randint(0, sys.maxsize)
-        while num < sum(a):
-            num = random.randint(0, sys.maxsize)
+    while cnt <= n:
+        num = random.randint(sum(a), sum(a)+1000)
         a[cnt-1] = num
         cnt += 1
     return a
@@ -22,7 +18,7 @@ def generate_key(n):
     print("Input a list of n superincreasing integers, separated by commas or spaces.")
     print("If you simply press , we shall randomly generate one for you.")
     W = input("W? ").replace(",", "")
-    if W == "\n":
+    if W == '':
         A = random_num(n)
     else:
         A = list(map(int, W.split(" ")))
@@ -98,11 +94,19 @@ def decryption(n):
         Plaintext.append(chr(plaintext[i]))
     print("".join(Plaintext))
 
-if option.upper() == "K":
-    generate_key(n)
-elif option.upper() == "E":
-    encryption(n)
-elif option.upper() == "D":
-    decryption(n)
-else:
-    print("Follow the rule please!!")
+def main():
+
+    option = input("[K]ey generation| [E]ncryption | [D]ecryption?")
+    print("Select the block size.")
+    n = int(input("n?"))
+    if option.upper() == "K":
+        generate_key(n)
+    elif option.upper() == "E":
+        encryption(n)
+    elif option.upper() == "D":
+        decryption(n)
+    else:
+        print("Follow the rule please!!")
+
+if __name__ == '__main__':
+    main()
