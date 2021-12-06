@@ -1,4 +1,21 @@
-# Cryptograhpy
+# Cryptograhpy  
+1. Substition Cipher  
+	- Caesar Cipher  
+	- Vigenere Cipher
+	- Playfair Cipher
+	- Lorenz Cipher
+2. Transposition
+	- Scytale Cipher
+	- Rail Fence Cipher
+3. Asymmetric Cipher
+	- Merkle-Hellman Knapsack Cryptosystem
+	- Kid-RSA & RSA
+	- Diffie-Hellman Key Exachange Cryptosystem
+4. Stream Cipher
+	- RC4 Cipher
+	- One-time Pad (OTP): key can only be used once (but its key management is too complicated)
+5. GPG  
+	e.g. stimulate the content of a mail
 ## Caesar Cipher
 usage:  
 `python3 Caesar_cipher.py key`
