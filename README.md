@@ -147,3 +147,52 @@ Input ciphertext (separated by spaces) - 1181, 1394, 1249, 1027, 1171, 907, 1260
 Plaintext: 69 110 99 114 121 112 116 32 109 101 33 33 33
 Encrypt me!!!
 ```
+
+## RSA
+- Encryption
+```
+[E]ncryption, [D]ecryption, or [Q]uit -- E
+2       3       5       7       11
+13      17      19      23      29
+31      37      41      43      47
+53      59      61      67      71
+73      79      83      89      97
+Select two prime numbers from the above, separated by a space.
+Or press ENTER and I'll randomly select two for you -- 5 29
+The two prime numbers are 5 and 29.
+n = 5 * 29 = 145
+Possible values of e which are coprime to 28:
+3       5       9       11      13      15      17      19      23      25     27
+Choose one -- 11
+You may publish your public key (n,e) = (145,11)
+and keep your private key (n,d) = (145,23) secret.
+Plaintext - ABC
+110 61 138
+```
+- Decryption
+```
+[E]ncryption, [D]ecryption, or [Q]uit -- D
+Your private key (n, d), separated by a space or comma -- 145 23
+Ciphertext (integers separated by spaces) -- 110 61 138
+65 66 67
+Plaintext - ABC
+```
+
+### Kid-RSA
+- Encryption
+```
+[E]ncryption, [D]ecryption, or [Q]uit -- e
+Input 4 integers a, b, a', b' -- 9 11 5 8
+You may publish your public key (n,e) = (4048,499)
+and keep your private key (n,d) = (4048,795) secret.
+Plaintext - ABC
+51 550 1049
+```
+- Decryption
+```
+[E]ncryption, [D]ecryption, or [Q]uit -- d
+Your private key (n, d), separated by a space or comma -- 4048,795
+Ciphertext (integers separated by spaces) -- 51 550 1049
+65 66 67
+Plaintext - ABC
+```
