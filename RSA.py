@@ -27,7 +27,7 @@ def encryption():
     print("Select two prime numbers from the above, separated by a space.")
     prime_num = input("Or press ENTER and I'll randomly select two for you -- ")
     if prime_num == '':
-        p, q = randan_choose()
+        p, q = random_choose()
     else:
         p, q = list(map(int, prime_num.split(" ")))
     print("The two prime numbers are", p, "and", q, ".")
@@ -36,7 +36,7 @@ def encryption():
     eu_n = euclid(n)
     num_eu = len(eu_n)
     print("Possible values of e which are coprime to", num_eu, ": ")
-    print(" ".join(eu_n))
+    print(" ".join(euclid(num_eu)))
     e = int(input("Choose one -- "))
     print("You may publish your public key (n,e) = (", n, ",", e, ")")
     d = pow(e, -1, num_eu)
