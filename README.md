@@ -227,3 +227,21 @@ g, p = 5, 23
 21|14 12  7  6 15  3 19 13 21 18 22  9 11 16 17  8 20  4 10  2  5  1
 22| 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1 Bad
 ```
+
+## Rivest Cipher 4 (RC4)
+The program should take the first command line argument as the key, and the stdin as the message to encrypt/decrypt.
+Note: Let's assume the size of array "S" is 256.
+- Encryption
+```
+$ echo Plaintext | hw11-encrypt Key
+BBF316E8D940AF0AD3"
+$ echo pedia | hw11-encrypt Wiki
+1021BF0420
+$ echo 'Attack at dawn' | hw11-encrypt Secret
+45A01F645FC35B383552544B9BF5
+```
+- Decryption
+```
+$ echo 'BBF316E8D940AF0AD3' | hw11-decrypt Key
+Plaintext
+```
