@@ -233,15 +233,28 @@ The program should take the first command line argument as the key, and the stdi
 Note: Let's assume the size of array "S" is 256.
 - Encryption
 ```
-$ echo Plaintext | hw11-encrypt Key
+$ echo Plaintext | RC4-encrypt Key
 BBF316E8D940AF0AD3"
-$ echo pedia | hw11-encrypt Wiki
+$ echo pedia | RC4-encrypt Wiki
 1021BF0420
-$ echo 'Attack at dawn' | hw11-encrypt Secret
+$ echo 'Attack at dawn' | RC4-encrypt Secret
 45A01F645FC35B383552544B9BF5
 ```
 - Decryption
 ```
-$ echo 'BBF316E8D940AF0AD3' | hw11-decrypt Key
+$ echo 'BBF316E8D940AF0AD3' | RC4-decrypt Key
 Plaintext
 ```
+
+## One Time Pad (OTP)
+- `otp_key.py`: generate randomness key
+	- argument: [num_file][length_key]
+```
+python otp_key.py 1 100
+```
+The main program should take the first command line argument as the filename of the key file, and the stdin as the message to encrypt/decrypt.
+- encryptoin: 
+```
+echo "Meeting at14pm in ny." | OTP-encrypt key68496.txt
+```
+The decryption is opposite of encryption. Remind that key can only be used once!
